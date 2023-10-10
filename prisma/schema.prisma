@@ -9,3 +9,40 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Seller {
+  id        Int    @id @default(autoincrement())
+  name      String
+  email     String
+  cellphone String
+  cep       String
+  Sell      Sell[]
+}
+
+model Client {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String?
+  cellphone String
+  gender    String
+  birthDate DateTime
+  interests String
+  Sell      Sell[]
+}
+
+model Sell {
+  id           Int       @id @default(autoincrement())
+  date         DateTime  @default(now())
+  amount       Int
+  paymentType  String
+  products     Json
+  order        Boolean?
+  supplier     String?
+  deliveryDate DateTime?
+
+  // Relationships
+  seller   Seller @relation(fields: [sellerId], references: [id])
+  client   Client @relation(fields: [clientId], references: [id])
+  clientId Int
+  sellerId Int
+}
