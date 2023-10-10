@@ -21,6 +21,9 @@ export class SellerService {
       where: {
         id,
       },
+      include: {
+        Sell: true,
+      },
     });
   }
 

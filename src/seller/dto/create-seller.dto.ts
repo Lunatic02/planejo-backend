@@ -1,4 +1,4 @@
-import { MaxLength, IsString, IsNotEmpty } from 'class-validator';
+import { MaxLength, IsString, IsNotEmpty, IsEmail } from 'class-validator';
 
 export class CreateSellerDto {
   @MaxLength(255)
@@ -6,7 +6,16 @@ export class CreateSellerDto {
   @IsNotEmpty()
   name: string;
 
+  @IsEmail()
+  @IsNotEmpty()
+  @IsString()
   email: string;
+
+  @IsNotEmpty()
+  @IsString()
   cellphone: string;
+
+  @IsNotEmpty()
+  @IsString()
   cep: string;
 }
