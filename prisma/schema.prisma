@@ -31,14 +31,14 @@ model Client {
 }
 
 model Sell {
-  id           Int       @id @default(autoincrement())
-  date         DateTime  @default(now())
+  id           Int      @id @default(autoincrement())
+  date         DateTime @default(now())
   amount       Int
   paymentType  String
   products     Json
   order        Boolean?
   supplier     String?
-  deliveryDate DateTime?
+  deliveryDate String?
 
   // Relationships
   seller   Seller @relation(fields: [sellerId], references: [id])
