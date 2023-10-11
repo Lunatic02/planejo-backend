@@ -7,7 +7,6 @@ export class CreateSellerDto {
   name: string;
 
   @IsEmail()
-  @IsNotEmpty()
   @IsString()
   email: string;
 
