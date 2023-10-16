@@ -14,7 +14,7 @@ export class ClientsService {
   }
 
   findAll() {
-    return this.prisma.client.findMany();
+    return this.prisma.client.findMany({ orderBy: [{ name: 'asc' }] });
   }
 
   findOne(id: number) {
