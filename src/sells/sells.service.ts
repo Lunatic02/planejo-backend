@@ -15,6 +15,7 @@ export class SellsService {
   findAll() {
     return this.prisma.sell.findMany({
       include: { client: true, seller: true },
+      orderBy: [{ id: 'desc' }],
     });
   }
 
