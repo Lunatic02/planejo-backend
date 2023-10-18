@@ -25,6 +25,11 @@ export class SellsController {
     return this.sellsService.findAll();
   }
 
+  @Get('encomendas')
+  findOrders() {
+    return this.sellsService.findOrders();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.sellsService.findOne(+id);

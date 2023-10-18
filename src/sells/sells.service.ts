@@ -19,6 +19,12 @@ export class SellsService {
     });
   }
 
+  findOrders() {
+    return this.prisma.sell.findMany({
+      where: { order: true },
+    });
+  }
+
   findOne(id: number) {
     return this.prisma.sell.findUnique({
       where: { id },
