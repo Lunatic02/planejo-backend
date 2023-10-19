@@ -31,4 +31,5 @@ export class CreateSellDto {
   @IsNumber()
   @IsNotEmpty()
   sellerId: number;
+  done: boolean;
 }

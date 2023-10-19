@@ -39,6 +39,7 @@ model Sell {
   order        Boolean?
   supplier     String?
   deliveryDate String?
+  done         Boolean  @default(false)
 
   // Relationships
   seller   Seller @relation(fields: [sellerId], references: [id])
