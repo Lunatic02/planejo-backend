@@ -1,4 +1,4 @@
-import { MaxLength, IsString, IsNotEmpty, IsEmail } from 'class-validator';
+import { MaxLength, IsString, IsNotEmpty } from 'class-validator';
 
 export class CreateClientDto {
   @MaxLength(255)
